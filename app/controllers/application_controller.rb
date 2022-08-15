@@ -20,6 +20,12 @@ class ApplicationController < Sinatra::Base
   patch "/todos/:id" do
     todo = Todo.find(params[:id])
     todo.update(params)
+    todo.to_json
+  end
+
+  patch "/todos/:id/category" do
+    todo = Todo.find(params[:id])
+    todo.update(params)
     todo.cleanup_database
     todo.to_json
   end
