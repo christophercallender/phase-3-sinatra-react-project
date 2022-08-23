@@ -3,7 +3,7 @@ class Todo < ActiveRecord::Base
 
   def cleanup_database
     # Delete all categories
-    Category.all.each { |category| category.destroy }
+    Category.destroy_all
 
     # Find or create a category for each todos' category_name
     Todo.all.each do |todo|
