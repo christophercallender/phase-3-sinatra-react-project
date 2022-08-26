@@ -1,6 +1,4 @@
 class TodosController < ApplicationController
-  # set :default_content_type, "application/json"
-
   get "/" do
     todos = Todo.all
     todos.to_json
